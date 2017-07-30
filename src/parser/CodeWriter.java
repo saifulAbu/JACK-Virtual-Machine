@@ -83,12 +83,12 @@ public class CodeWriter {
                 operator = "|";
             }
             code = "@SP\n"
-                    + "A=M-1\n"
+                    + "M=M-1\n"
+                    + "A=M-1" + NL
                     + "D=M\n"
+                    + "A=A+1\n"
+                    + "D=D" + operator + "M\n"
                     + "A=A-1\n"
-                    + "M=M" + operator + "D\n"
-                    + "D=A+1\n"
-                    + "@SP\n"
                     + "M=D\n";
         }
 
